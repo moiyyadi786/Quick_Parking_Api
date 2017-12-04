@@ -1,0 +1,57 @@
+//
+//  ViewController.swift
+//  Quick Parking
+//
+//  Created by Mac27 on 10/9/17.
+//  Copyright © 2017 test. All rights reserved.
+//
+
+import UIKit
+import GoogleMaps
+import GooglePlaces
+
+internal class AddParking : UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    internal var resultsViewController: GMSAutocompleteResultsViewController!
+
+    internal var searchController: UISearchController!
+
+    internal var resultView: UITextView!
+
+    internal var scrollView: UIScrollView!
+
+    @IBOutlet weak internal var parkingAmount: UITextField!
+
+    @IBOutlet weak internal var parkingStartDateTime: UIDatePicker!
+
+    @IBOutlet weak internal var parkingEndDateTime: UIDatePicker!
+
+    @IBOutlet weak internal var parkingImage: UIImageView!
+
+    override internal func viewDidLoad()
+
+    override internal func didReceiveMemoryWarning()
+
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool
+
+    internal func textFieldDidEndEditing(_ textField: UITextField)
+
+    @IBAction internal func imagePicker(_ sender: Any)
+
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+
+    internal func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+
+    @IBAction internal func postParking(_ sender: UIButton)
+}
+
+extension AddParking : GMSAutocompleteResultsViewControllerDelegate {
+
+    internal func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace)
+
+    internal func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error)
+
+    internal func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController)
+
+    internal func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController)
+}
